@@ -1,0 +1,92 @@
+$color: #f8f8f8;
+$bgColor: #eaeaea;
+$gText: #7e7e82;
+$dText: #1b1c21;
+
+.header {
+  width: 100%;
+  height: 88px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.3px solid #80949f;
+
+  .btn-menu-icon,
+  .btn-phone-icon,
+  .btn-message-icon,
+  .btn-profile-icon,
+  .btn-repair-icon,
+  .btn-status-icon {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    .btn-phone-icon,
+    .btn-message-icon,
+    .btn-profile-icon {
+      display: none;
+    }
+
+    .btn-repair-icon {
+      border-left: 2px solid #eaeaea;
+      padding-left: 10px;
+      margin-left: auto;
+    }
+
+    .btn-menu-icon,
+    &__logo {
+      margin-left: 10px;
+    }
+
+    .btn-repair-icon,
+    .btn-status-icon {
+      margin-right: 20px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    .btn-menu-icon {
+      border-right: 2px solid $bgColor;
+      padding-right: 10px;
+      width: auto;
+    }
+    .btn-menu-icon,
+    .logo {
+      display: flex;
+      margin-left: 15px;
+    }
+    .logo {
+      margin-right: auto;
+    }
+    .btn-phone-icon,
+    .btn-message-icon,
+    .btn-profile-icon,
+    .btn-repair-icon,
+    .btn-status-icon {
+      display: flex;
+      margin-right: 20px;
+    }
+    .btn-phone-icon {
+      margin-left: auto;
+    }
+    .btn-repair-icon {
+      padding-left: 15px;
+      width: auto;
+      border-left: 2px solid $bgColor;
+      margin-left: 0;
+    }
+  }
+}
+@media screen and (min-width: 1120px) {
+  .header {
+    display: none;
+  }
+}

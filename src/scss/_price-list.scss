@@ -1,0 +1,100 @@
+.price-list {
+  height: 508px;
+
+  .section-title {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    color: $gText;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'regular';
+    font-weight: 300;
+    padding: 0px;
+    margin: 0;
+  }
+
+  .swiper-price {
+    height: 240px;
+    margin: 0 10px;
+
+    .swiper-wrapper {
+      width: 260px;
+      height: 220px;
+
+      .price-slide {
+        height: 200px;
+        width: 260px;
+        background-color: $wColor;
+        border-radius: 6px;
+        border: none;
+        display: flex;
+        justify-content: center;
+
+        .price-card {
+          padding: 0 10px;
+          position: relative;
+          h3 {
+            color: $gText;
+            font-size: 14px;
+            letter-spacing: 0px;
+            line-height: 16px;
+            margin-bottom: 5px;
+          }
+
+          p {
+            color: $dText;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            line-height: 18px;
+            margin: 0;
+          }
+        }
+        .btn-follow {
+          background-color: #ff3e79;
+          border: none;
+          border-radius: 16px;
+          color: $wColor;
+          display: inline;
+          position: absolute;
+          bottom: 20px;
+          right: 10px;
+          width: 119px;
+          height: 32px;
+        }
+      }
+    }
+    .swiper-pagination-bullet-active {
+      background: #b5b6bc;
+    }
+  }
+  .price-about {
+    height: 192px;
+    margin: 0 10px;
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: $dText;
+    }
+    a {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      font-weight: 600;
+      color: $dText;
+      text-decoration: none;
+    }
+    a::after {
+      content: url('../img/btn/dropdown1.svg');
+      /*background-image: url('../img/btn/dropdown.svg');*/
+      width: 24px;
+      height: 28px;
+      margin-left: 5px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+    }
+  }
+}

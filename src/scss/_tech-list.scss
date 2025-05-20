@@ -1,0 +1,57 @@
+.tech-list {
+  height: 284px;
+
+  .section-title {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    color: $gText;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'regular';
+    font-weight: 300;
+    padding: 0px;
+    margin: 0;
+  }
+
+  .swiper-tech {
+    height: 200px;
+    width: auto;
+  }
+  .swiper-wrapper {
+    width: 240px;
+
+    .tech-slide {
+      width: 240px;
+      height: 160px;
+      display: flex;
+      justify-content: center;
+      background-color: $wColor;
+      border-radius: 6px;
+      border: 1px solid $color;
+
+      p {
+        margin: 10px;
+        font-size: 16px;
+        letter-spacing: -0.2px;
+        color: $dText;
+        font-weight: 600;
+      }
+    }
+    .btn-follow {
+      border: none;
+      background: transparent;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin: 10px 10px 10px auto;
+
+      align-self: flex-end;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #b5b6bc;
+  }
+}

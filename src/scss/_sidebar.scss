@@ -1,0 +1,120 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 1px 1px 35px grey;
+  z-index: 1000;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: center;
+    height: 88px;
+
+    &__open-menu,
+    &__search {
+      background: transparent;
+      border: none;
+    }
+    &__open-menu {
+      margin-left: 5px;
+    }
+    &__logo {
+      margin-left: 5px;
+      margin-right: auto;
+    }
+    &__search {
+      margin-right: 10px;
+      margin-left: auto;
+    }
+  }
+
+  .menu {
+    margin-top: 5px;
+
+    &__item {
+      padding: 0;
+      margin: 0;
+
+      .item-link {
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+
+        a {
+          text-decoration: none;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: -0.2px;
+          height: 30px;
+          color: $dText;
+          padding-left: 10px;
+        }
+        a:hover {
+          color: #7e7e82;
+          font-size: 18px;
+          padding-left: 20px;
+          transition: 300ms;
+        }
+      }
+    }
+  }
+  footer {
+    margin-top: auto;
+    margin-bottom: 10px;
+    padding-left: 10px;
+
+    .contact-us {
+      .button-icon {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-start;
+
+        .icon {
+          background: transparent;
+          border: none;
+        }
+      }
+      &__details {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          font-size: 16px;
+          letter-spacing: -0.2px;
+          text-decoration: none;
+          color: #1b1c21;
+          padding: 5px;
+          width: 106px;
+        }
+      }
+    }
+    .language {
+      display: flex;
+      margin: 5px;
+      width: 87px;
+      height: 24px;
+
+      a {
+        text-decoration: none;
+        color: $dText;
+        font-size: 16px;
+        letter-spacing: -0.2px;
+        width: 24px;
+        height: 24px;
+        margin: 3px;
+      }
+      a:hover {
+        color: #7e7e82;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.sidebar {
+  transform: translate(-100&);
+  transition: transform 0.3s ease;
+}
+.active {
+  transform: translateX(0);
+}

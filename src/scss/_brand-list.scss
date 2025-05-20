@@ -1,0 +1,112 @@
+.brand-list {
+  height: 196px;
+  width: 100%;
+  margin: 0 10px;
+
+  .section-title {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    color: $gText;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'regular';
+    font-weight: 300;
+    padding: 0px;
+    margin: 0;
+  }
+}
+.swiper-brands {
+  height: 126px;
+  width: 100%;
+
+  .brands-wrapper {
+    width: 240px;
+    margin-left: 10px;
+
+    .brands-slide {
+      width: 240px;
+      height: 72px;
+      border-radius: 6px;
+      border: 1px solid $color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background-color: $wColor;
+
+      .brand-logo {
+        width: 108px;
+        height: 32px;
+        margin-left: 15px;
+      }
+      .brand-logo3 {
+        width: 55px;
+        height: 55px;
+        margin: 6px 10px 10px 10px;
+      }
+      .brand-logo6 {
+        width: 60px;
+        height: 60px;
+      }
+
+      .btn-follow {
+        border: none;
+        background: transparent;
+        margin-right: 5px;
+      }
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background: #b5b6bc;
+  }
+}
+.btn-read {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .brands-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
+    grid-gap: 10px;
+    height: auto;
+  }
+  .swiper {
+    display: contents;
+  }
+  .swiper-brands {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(3, 1fr)) !important;
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    grid-gap: 10px;
+    height: auto;
+  }
+  .swiper-slides {
+    width: 100% !important;
+    height: auto;
+  }
+  .brands-slide:nth-child(n + 7) {
+    display: none;
+  }
+  .btn-read {
+    display: block;
+    background-image: url('../img/btn/ReadMore\ Copy.svg');
+    width: 132px;
+    height: 24px;
+    border: none;
+  }
+  @media screen and (min-width: 1120px) {
+    .brands-wrapper {
+      display: flex;
+
+      column-gap: 0;
+    }
+    .swiper-brands {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+$color: #f8f8f8;
+$bgColor: #eaeaea;
+$gText: #7e7e82;
+$dText: #1b1c21;
+
+.about {
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      font-family: 'TTLakes-Bold';
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      color: $dText;
+      padding-left: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 10px;
+    padding-left: 15px;
+    overflow: scroll;
+  }
+  &__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .list-link {
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.3s ease;
+
+    a {
+      text-decoration: none;
+      white-space: nowrap;
+      color: $gText;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+      padding: 10px;
+      font-weight: 600;
+    }
+  }
+  .list-link:hover {
+    border: 2px solid #b8ffec;
+  }
+}
+.about__desc {
+  padding-left: 10px;
+
+  .about-text {
+    .text {
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      color: $dText;
+    }
+
+    .desc-add {
+      border: none;
+      padding: 0;
+      background-color: $bgColor;
+
+      img {
+        padding: 0;
+      }
+    }
+  }
+}
+.about-image {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    .button-repair,
+    .button-status {
+      display: none;
+    }
+
+    .about-text {
+      padding: 0 10px;
+
+      .text {
+        p:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .about {
+    &__item {
+      margin: 15px 0;
+    }
+    .button-repair,
+    .button-status {
+      display: none;
+    }
+    &__desc {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 5px;
+      align-items: stretch;
+
+      .about-text {
+        width: 312px;
+        flex-direction: row;
+        align-items: center;
+        overflow: hidden;
+
+        .text {
+          height: 160px;
+
+          p:nth-of-type(2) {
+            display: none;
+          }
+        }
+      }
+      .about-image {
+        width: 50%;
+        height: auto;
+        margin: 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1120px) {
+  .button-repair,
+  .button-status {
+    display: block;
+  }
+}
