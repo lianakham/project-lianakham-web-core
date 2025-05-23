@@ -1,44 +1,37 @@
-window.addEventListener('DOMContentLoaded', () => {
-  Swiper.use([Pagination])
+import Swiper from 'swiper'
 
-  const resizableSwiper = (
-    breakpoint,
-    swiperClass,
-    swiperSettings,
-    callback
-  ) => {
-    let swiper
+import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+Swiper.use([Pagination])
+console.log('tree')
+let swiperPriceIn
 
-    breakpoint = window.matchMedia(breakpoint)
+function initSwiper() {
+  if (window.innerWidth < 1120) {
+    if (!swiperPriceIn) {
+      swiperPriceIn = new Swiper('.swiper-price', {
+        modules: [Pagination],
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 15,
 
-    const enableSwiper = function (className, settings) {
-      swiper = new Swiper(className, settings)
-
-      if (callback) {
-        callback(swiper)
-      }
+        pagination: {
+          el: '.price-pagination'
+        }
+      })
     }
-    const checker = function () {
-      if (breakpoint.matches) {
-        return enableSwiper(swiperClass, swiperSettings)
-      } else {
-        if (swiper !== undefined) swiper.destroy(true, true)
-        return
-      }
+  } else {
+    if (swiperPriceIn) {
+      swiperPriceIn.destroy(true, true)
+      swiperPriceIn = null
     }
-
-    breakpoint.addEventListener('change', checker)
-    checker()
   }
+}
 
-  resizableSwiper('(max-width: 768px)', '.swiper-brands', {
-    modules: [Pagination],
-    loop: true,
-    slidesPerView: 'auto',
-    spaceBetween: 15,
+initSwiper()
 
-    pagination: {
-      el: '.swiper-pagination'
-    }
-  })
+window.addEventListener('resize', () => {
+  initSwiper()
 })
+console.log(document.querySelector('tree'))

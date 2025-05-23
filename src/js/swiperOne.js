@@ -1,50 +1,46 @@
 import Swiper from 'swiper'
-export const myVariable = 'Block 7'
+
 import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+Swiper.use([Pagination])
+console.log('brand')
+let swiperBrandIn
 
-window.addEventListener('DOMContentLoaded', () => {
-  Swiper.use([Pagination])
+function initSwiper() {
+  if (window.innerWidth < 768) {
+    if (!swiperBrandIn) {
+      swiperBrandIn = new Swiper('.swiper-brands', {
+        modules: [Pagination],
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 15,
 
-  const resizableSwiper = (
-    breakpoint,
-    swiperClass,
-    swiperSettings,
-    callback
-  ) => {
-    let swiper
-
-    breakpoint = window.matchMedia(breakpoint)
-
-    const enableSwiper = function (className, settings) {
-      swiper = new Swiper(className, settings)
-
-      if (callback) {
-        callback(swiper)
-      }
+        pagination: {
+          el: '.brand-pagination'
+        }
+      })
     }
-    const checker = function () {
-      if (breakpoint.matches) {
-        return enableSwiper(swiperClass, swiperSettings)
-      } else {
-        if (swiper !== undefined) swiper.destroy(true, true)
-        return
-      }
+  } else {
+    if (swiperBrandIn) {
+      swiperBrandIn.destroy(true, true)
+      swiperBrandIn = null
     }
-
-    breakpoint.addEventListener('change', checker)
-    checker()
   }
+}
 
-  resizableSwiper('(max-width: 768px)', '.swiper-brands', {
-    modules: [Pagination],
-    loop: true,
-    slidesPerView: 'auto',
-    spaceBetween: 15,
+initSwiper()
 
-    pagination: {
-      el: '.swiper-pagination'
-    }
-  })
+window.addEventListener('resize', () => {
+  initSwiper()
 })
+
+const brands = document.querySelector('.brand-list')
+const readBrands = brands.querySelector('.brands-read')
+const gridBrands = brands.querySelector('.brands-wrapper')
+
+readBrands.addEventListener('click', () => {
+  readBrands.classList.toggle('brand-active')
+  gridBrands.classList.toggle('brand-expanded')
+})
+console.log(document.querySelector('.brand-list'))

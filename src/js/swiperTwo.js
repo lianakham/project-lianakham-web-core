@@ -1,44 +1,45 @@
-window.addEventListener('DOMContentLoaded', () => {
-  Swiper.use([Pagination])
+import Swiper from 'swiper'
 
-  const resizableSwiper = (
-    breakpoint,
-    swiperClass,
-    swiperSettings,
-    callback
-  ) => {
-    let swiper
+import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+Swiper.use([Pagination])
+console.log('tech')
+let swiperTechIn
 
-    breakpoint = window.matchMedia(breakpoint)
+function initSwiper() {
+  if (window.innerWidth < 768) {
+    if (!swiperTechIn) {
+      swiperTechIn = new Swiper('.swiper-tech', {
+        modules: [Pagination],
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 15,
 
-    const enableSwiper = function (className, settings) {
-      swiper = new Swiper(className, settings)
-
-      if (callback) {
-        callback(swiper)
-      }
+        pagination: {
+          el: '.tech-pagination'
+        }
+      })
     }
-    const checker = function () {
-      if (breakpoint.matches) {
-        return enableSwiper(swiperClass, swiperSettings)
-      } else {
-        if (swiper !== undefined) swiper.destroy(true, true)
-        return
-      }
+  } else {
+    if (swiperTechIn) {
+      swiperTechIn.destroy(true, true)
+      swiperTechIn = null
     }
-
-    breakpoint.addEventListener('change', checker)
-    checker()
   }
+}
 
-  resizableSwiper('(max-width: 768px)', '.swiper-brands', {
-    modules: [Pagination],
-    loop: true,
-    slidesPerView: 'auto',
-    spaceBetween: 15,
-
-    pagination: {
-      el: '.swiper-pagination'
-    }
-  })
+initSwiper()
+window.addEventListener('resize', () => {
+  initSwiper()
 })
+
+const tech = document.querySelector('.tech-list')
+const readTech = tech.querySelector('.tech-read')
+const gridTech = tech.querySelector('.tech-wrapper')
+
+readTech.addEventListener('click', () => {
+  readTech.classList.toggle('tech-active')
+  gridTech.classList.toggle('tech-expanded')
+})
+console.log(document.querySelector('.tech-list'))

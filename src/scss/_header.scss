@@ -11,19 +11,25 @@ $dText: #1b1c21;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.3px solid #80949f;
+  border-bottom: 0.1px solid #80949f;
+  background-color: $wColor;
 
-  .btn-menu-icon,
-  .btn-phone-icon,
-  .btn-message-icon,
-  .btn-profile-icon,
-  .btn-repair-icon,
-  .btn-status-icon {
+  .btn-menu-icon {
+    cursor: pointer;
+  }
+  [class^='btn-'] {
     background-color: transparent;
     border: none;
     width: 40px;
     height: 40px;
     padding: 0;
+  }
+  [class^='btn-'] {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  [class^='btn-']:hover {
+    filter: drop-shadow(0 0 4px blue);
   }
 }
 @media screen and (max-width: 768px) {
@@ -77,6 +83,7 @@ $dText: #1b1c21;
     .btn-phone-icon {
       margin-left: auto;
     }
+
     .btn-repair-icon {
       padding-left: 15px;
       width: auto;
