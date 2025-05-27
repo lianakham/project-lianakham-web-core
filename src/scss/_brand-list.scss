@@ -99,11 +99,12 @@
     width: 100%;
     height: auto;
   }
-  .brands-slide {
-    display: flex;
-  }
+
   .brands-slide:nth-child(n + 7) {
     display: none;
+  }
+  .brands-slide {
+    display: flex;
   }
   .brand-pagination {
     display: none;
@@ -134,7 +135,7 @@
   }
 }
 .brands-wrapper.brand-expanded .brands-slide {
-  display: grid;
+  display: flex;
 }
 @media screen and (min-width: 1120px) {
   .brands-wrapper {
