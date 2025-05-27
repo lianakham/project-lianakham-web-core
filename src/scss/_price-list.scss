@@ -1,7 +1,10 @@
+@use 'variables' as *;
+
 .price-list {
   height: 508px;
   width: 100%;
-  margin: 0 10px;
+  padding: 0 10px;
+  border-top: 1px solid #d9fff5;
 
   .section-title {
     height: 56px;
@@ -121,7 +124,7 @@
   }
 
   .price-table {
-    margin: 10px;
+    padding: 10px;
     display: flex;
     table {
       width: 90%;
@@ -144,7 +147,7 @@
           padding: 10px 10px;
         }
         td:last-child {
-          padding: 0;
+          padding: 10px;
           margin: 0;
         }
         tr {
@@ -166,15 +169,7 @@
   }
   .price-about {
     width: 421px;
-    margin: 10px 10px;
-  }
-  .footer-main {
-    margin: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-
-    p {
-      width: 30%;
-    }
+    padding: 10px 10px;
+    height: auto;
   }
 }

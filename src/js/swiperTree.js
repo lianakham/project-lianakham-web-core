@@ -4,7 +4,7 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 Swiper.use([Pagination])
-console.log('tree')
+
 let swiperPriceIn
 
 function initSwiper() {
@@ -34,4 +34,3 @@ initSwiper()
 window.addEventListener('resize', () => {
   initSwiper()
 })
-console.log(document.querySelector('tree'))

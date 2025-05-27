@@ -7,4 +7,3 @@ import '../js/swiperOne'
 import '../js/swiperTwo'
 import '../js/swiperTree'
 import '../js/sidebar'
-console.log('index!')

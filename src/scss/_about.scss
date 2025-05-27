@@ -1,7 +1,4 @@
-$color: #f8f8f8;
-$bgColor: #eaeaea;
-$gText: #7e7e82;
-$dText: #1b1c21;
+@use 'variables' as *;
 
 .about {
   background-color: $bgColor;
@@ -75,6 +72,7 @@ $dText: #1b1c21;
       background-color: $bgColor;
       width: 134px;
       height: 24px;
+      transition: transform 0.2s ease;
     }
     .desc-add:hover::before {
       filter: blur(0.5px);
@@ -118,6 +116,9 @@ $dText: #1b1c21;
 }
 @media screen and (min-width: 768px) {
   .about {
+    &__list {
+      flex-wrap: wrap;
+    }
     &__item {
       margin: 15px 0;
     }
@@ -156,8 +157,35 @@ $dText: #1b1c21;
 }
 
 @media screen and (min-width: 1120px) {
-  .button-repair,
-  .button-status {
-    display: block;
+  .about {
+    &__item {
+      height: 88px;
+      margin: 0;
+      justify-content: space-between;
+
+      &__item-text {
+        margin-left: 10px;
+        margin-right: auto;
+      }
+      .button-repair,
+      .button-status {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.2px;
+        gap: 15px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+      }
+      .button-repair {
+        margin-right: 10px;
+        margin-left: auto;
+      }
+    }
+    &__list {
+      flex-wrap: wrap;
+    }
   }
 }

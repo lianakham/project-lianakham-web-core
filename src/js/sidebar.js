@@ -1,5 +1,3 @@
-console.log('sidebar')
-
 const sidebar = document.querySelector('.sidebar')
 const openMenu = document.querySelector('.btn-menu-icon')
 const closeMenu = sidebar.querySelector('.header__open-menu')
@@ -24,4 +22,3 @@ window.addEventListener('resize', () => {
     backGround.classList.remove('sidebar-active')
   }
 })
-console.log(document.querySelector('.sidebar'))

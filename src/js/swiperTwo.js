@@ -4,7 +4,7 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 Swiper.use([Pagination])
-console.log('tech')
+
 let swiperTechIn
 
 function initSwiper() {
@@ -42,4 +42,3 @@ readTech.addEventListener('click', () => {
   readTech.classList.toggle('tech-active')
   gridTech.classList.toggle('tech-expanded')
 })
-console.log(document.querySelector('.tech-list'))

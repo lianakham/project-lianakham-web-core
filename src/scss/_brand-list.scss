@@ -1,7 +1,10 @@
+@use 'variables' as *;
+
 .brand-list {
   height: 196px;
   width: 100%;
-  margin: 0 10px;
+  padding: 0 10px;
+  border-top: 1px solid #d9fff5;
 
   .section-title {
     height: 80px;
@@ -81,6 +84,9 @@
     grid-gap: 10px;
     height: auto;
     grid-auto-rows: auto;
+    @media screen and (min-width: 1080px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
   .swiper {
     display: contents;
@@ -128,14 +134,18 @@
   }
 }
 .brands-wrapper.brand-expanded .brands-slide {
-  display: flex;
+  display: grid;
 }
 @media screen and (min-width: 1120px) {
   .brands-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-  }
-  .swiper-brands {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: auto;
+    height: auto;
+    @media screen and (min-width: 1320px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .swiper-brands {
+    }
   }
 }

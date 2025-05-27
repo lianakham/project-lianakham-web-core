@@ -4,7 +4,7 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 Swiper.use([Pagination])
-console.log('brand')
+
 let swiperBrandIn
 
 function initSwiper() {
@@ -43,4 +43,3 @@ readBrands.addEventListener('click', () => {
   readBrands.classList.toggle('brand-active')
   gridBrands.classList.toggle('brand-expanded')
 })
-console.log(document.querySelector('.brand-list'))

@@ -1,8 +1,32 @@
-@import './main';
+@use 'variables' as *;
+@use 'header';
+@use 'about';
+@use 'brand-list';
+@use 'tech-list';
+@use 'price-list';
+@use 'footer-main';
+@use 'sidebar';
 
 body {
-  padding: 0;
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'regular', sans-serif;
+  padding: 0;
+  font-family: 'regular';
+  display: flex;
   background-color: $bgColor;
+  width: 100%;
+}
+@media screen and (max-width: 1120px) {
+  .main {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+@media screen and (min-width: 1120px) {
+  .main {
+    margin-left: 320px;
+    width: calc(100% - 320px);
+    overflow-x: hidden;
+  }
 }

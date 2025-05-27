@@ -1,7 +1,4 @@
-$color: #f8f8f8;
-$bgColor: #eaeaea;
-$gText: #7e7e82;
-$dText: #1b1c21;
+@use 'variables' as *;
 
 .header {
   width: 100%;
@@ -11,7 +8,7 @@ $dText: #1b1c21;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.1px solid #80949f;
+  border-bottom: 0.1px solid #d9fff5;
   background-color: $wColor;
 
   .btn-menu-icon {
